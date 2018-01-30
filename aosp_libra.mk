@@ -14,15 +14,21 @@
 # limitations under the License.
 #
 
+# Bootanimation
+TARGET_BOOT_ANIMATION_RES := 1080
+
 # Inherit from those products. Most specific first.
 $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+
+# Inherit some common AEX stuff.
+$(call inherit-product, vendor/aosp/common.mk)
 
 # Inherit device configuration
 $(call inherit-product, device/xiaomi/libra/device.mk)
 
 # Device identifier. This must come after all inclusions
-PRODUCT_NAME := full_libra
+PRODUCT_NAME := aosp_libra
 PRODUCT_DEVICE := libra
 
 PRODUCT_BRAND := Xiaomi

@@ -1,6 +1,5 @@
 #
-# Copyright (C) 2016 The CyanogenMod Project
-#               2017 The LineageOS Project
+# Copyright 2015 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -15,12 +14,5 @@
 # limitations under the License.
 #
 
-$(call inherit-product, device/xiaomi/libra/full_libra.mk)
-
-# Inherit some common LineageOS stuff.
-$(call inherit-product, vendor/lineage/config/common_full_phone.mk)
-
-PRODUCT_NAME := lineage_libra
-BOARD_VENDOR := Xiaomi
-
-PRODUCT_BUILD_PROP_OVERRIDES += PRODUCT_NAME=libra
+PRODUCT_MAKEFILES := \
+    $(LOCAL_DIR)/aosp_libra.mk
